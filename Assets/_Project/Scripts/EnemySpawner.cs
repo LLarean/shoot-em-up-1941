@@ -18,7 +18,7 @@ namespace Shmup1941
 
         private void OnValidate()
         {
-            _splineContainers = new List<SplineContainer>(GetComponentsInChildren<SplineContainer>());
+            // _splineContainers = new List<SplineContainer>(GetComponentsInChildren<SplineContainer>());
         }
 
         private void Start() => _enemyFactory = new EnemyFactory();
@@ -40,7 +40,6 @@ namespace Shmup1941
             SplineContainer splineContainer = _splineContainers[Random.Range(0, _splineContainers.Count)];
             
             _enemyFactory.CreateEnemy(enemyType, splineContainer);
-            
             _enemiesSpawned++;
         }
     }

@@ -1,5 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Splines;
 using Utilities;
 
@@ -32,15 +31,16 @@ namespace Shmup1941
         public GameObject Build()
         {
             GameObject instance = Object.Instantiate(_enemyPrefab);
+            instance.transform.position = _splineContainer.EvaluatePosition(0f);
             
             SplineAnimate splineAnimate = instance.GetOrAddComponent<SplineAnimate>();
             splineAnimate.Container = _splineContainer;
             splineAnimate.AnimationMethod = SplineAnimate.Method.Speed;
-            splineAnimate.ObjectUpAxis = SplineAnimate.AlignAxis.ZAxis;
-            splineAnimate.ObjectForwardAxis = SplineAnimate.AlignAxis.YAxis;
+            splineAnimate.ObjectUpAxis = SplineComponent.AlignAxis.ZAxis;
+            splineAnimate.ObjectForwardAxis = SplineComponent.AlignAxis.YAxis;
             splineAnimate.MaxSpeed = _speed;
-
-            instance.transform.position = _splineContainer.EvaluatePosition(0f);
+            
+            splineAnimate.Play();
 
             return instance;
         }

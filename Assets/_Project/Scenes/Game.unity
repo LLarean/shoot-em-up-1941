@@ -867,6 +867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f98df0d76842bbb004468705e0d892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _splineContainers:
+  - {fileID: 2023312511}
+  - {fileID: 890139960}
   _enemyTypes:
   - {fileID: 11400000, guid: 234aa1d6d2bc5954b8add0bd001e89d6, type: 2}
   _maxEnemies: 6
@@ -1307,6 +1310,10 @@ PrefabInstance:
     - target: {fileID: 6222375572048749450, guid: 343c5fe621c69d94b9ec84070566ed30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8195140966740975845, guid: 343c5fe621c69d94b9ec84070566ed30, type: 3}
+      propertyPath: m_Duration
+      value: 26.72531
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
