@@ -44,6 +44,11 @@ namespace Shmup1941
                 var hitVFX = Instantiate(_hitPrefab, contactPoint.point, Quaternion.identity);
                 DestroyParticles(hitVFX);
             }
+
+            if (other.gameObject.TryGetComponent(out Plane planeComponent))
+            {
+                planeComponent.TakeDamage(10);
+            }
             
             Destroy(gameObject);
         }
